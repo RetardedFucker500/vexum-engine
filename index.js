@@ -15,7 +15,18 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'menu.html'));
 });
 
-// Start the server
+app.get('/map', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'map.html'));
+});
+
+app.get('/bikes', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'bikes.html'));
+});
+
+app.get('/settings', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'settings.html'));
+});
+
 server.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
