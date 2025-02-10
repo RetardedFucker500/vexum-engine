@@ -2,5 +2,8 @@
     "scripts": {
         "install": "npm install ",
         "start": "node start.js"
+    },
+    "dependencies": {
+        "three.js": "^0.77.1"
     }
 }
