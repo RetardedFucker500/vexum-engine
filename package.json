@@ -1,9 +1,16 @@
 {
     "scripts": {
-        "install": "npm install ",
-        "start": "node start.js"
+        "kill-ports": "fuser -k 80/tcp || true && fuser -k 443/tcp || true",
+        "start": "npm run kill-ports && npx concurrently \"node index.js\" \"node three.js\" \"npx http-server -S -C cert.pem\" \"npx live-server --https\""
     },
     "dependencies": {
-        "three.js": "^0.77.1"
+        "child_process": "^1.0.2",
+        "express": "^4.21.2",
+        "http": "^0.0.1-security",
+        "path": "^0.12.7",
+        "three": "^0.154.0"
+    },
+    "devDependencies": {
+        "concurrently": "^8.0.0"
     }
 }
