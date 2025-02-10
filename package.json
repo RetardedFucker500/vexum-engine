@@ -5,7 +5,7 @@
 
     "scripts": {
         "start": "node index.js",
-        "build": "node "
+        "build": "node install.js"
     },
 
     "dependencies": {
