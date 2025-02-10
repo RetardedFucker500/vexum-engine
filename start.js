@@ -1,37 +1,17 @@
 const { exec } = require('child_process');
 
-exec('ls -la', (error, stdout, stderr) => {
-    if (error) {
-        console.error(`Error: ${error.message}`);
+exec('node index.js', (err, stdout, stderr) => {
+    if (err) {
+        console.error(`Error: ${err}`);
         return;
     }
-    if (stderr) {
-        console.error(`stderr: ${stderr}`);
-        return;
-    }
-    console.log(`stdout: ${stdout}`);
-});
+    console.log(stdout);
 
-
-exec('npm run build', (error, stdout, stderr) => {
-    if (error) {
-        console.error(`Error: ${error.message}`);
-        return;
-    }
-    if (stderr) {
-        console.error(`stderr: ${stderr}`);
-        return;
-    }
-    console.log(`stdout: ${stdout}`);
-});
-exec('npm run start', (error, stdout, stderr) => {
-    if (error) {
-        console.error(`Error: ${error.message}`);
-        return;
-    }
-    if (stderr) {
-        console.error(`stderr: ${stderr}`);
-        return;
-    }
-    console.log(`stdout: ${stdout}`);
+    exec('node three.js', (err, stdout, stderr) => {
+        if (err) {
+            console.error(`Error: ${err}`);
+            return;
+        }
+        console.log(stdout);
+    });
 });

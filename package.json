@@ -1,14 +1,6 @@
 {
-    "name": "mx-bikes",
-    "description": "this is just mx bikes rewritten.",
-    "version": "1.0.0",
-
     "scripts": {
-        "start": "node startjs",
-        "build": "node install.js"
-    },
-
-    "dependencies": {
-        "child_process": ""
+        "install": "npm install ",
+        "start": "node start.js"
     }
 }
