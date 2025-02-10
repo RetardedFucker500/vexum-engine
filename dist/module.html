@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene xr-mode-ui="enabled: true">
+      <a-assets>
+        <a-asset-item id="myModel" src="module/cottage_fbx.fbx"></a-asset-item>
+      </a-assets>
+      <a-entity gltf-model="#myModel" position="0 1 -2"></a-entity>
+      <a-light type="ambient" color="#ffffff"></a-light>
+    </a-scene>
+  </body>
+</html>

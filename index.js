@@ -1,27 +1,14 @@
-const express = require('express');
-const http = require('http');
-const path = require('path');
-import https from 'https';
-import fs from 'fs';
-
+import express from 'express';
 
 const app = express();
-const server = http.createServer(app);
+const PORT = process.env.PORT || 36363; // Codespaces uses environment ports
 
-const port = process.env.PORT || 8080;
-
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static('dist'));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    res.send('Hello from Codespaces!');
 });
 
-
-const options = {
-    key: fs.readFileSync('key.pem'),
-    cert: fs.readFileSync('cert.pem')
-};
-
-https.createServer(options, app).listen(443, () => {
-    console.log('HTTPS server running on port 443');
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 Server running at: https://organic-spork-jj77q7vg9q952565p-${PORT}.app.github.dev/`);
 });

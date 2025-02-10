@@ -11,9 +11,8 @@ renderer.xr.enabled = true;
 document.body.appendChild(renderer.domElement);
 document.body.appendChild(VRButton.createButton(renderer));
 
-// Load FBX Model
 const loader = new FBXLoader();
-loader.load('modules/cottage_fbx.fbx', function (fbx) {
+loader.load('dist/cottage_fbx.fbx', function (fbx) {
     fbx.scale.set(0.01, 0.01, 0.01);
     scene.add(fbx);
 }, undefined, function (error) {
