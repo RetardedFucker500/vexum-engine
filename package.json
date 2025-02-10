@@ -1,0 +1,14 @@
+{
+    "name": "mx-bikes",
+    "description": "this is just mx bikes rewritten.",
+    "version": "1.0.0",
+
+    "scripts": {
+        "start": "node index.js",
+        "build": "node "
+    },
+
+    "dependencies": {
+        "child_process": ""
+    }
+}
